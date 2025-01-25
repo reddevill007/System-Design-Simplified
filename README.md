@@ -1,6 +1,6 @@
 # System Design Simplified
 
-### **What is System Design?**
+## **What is System Design?**
 
 Imagine you're throwing a massive house party. You're inviting 500 people (wild, right?). Now, think about what you'll need to ensure the party runs smoothly:
 
@@ -90,7 +90,7 @@ So, think of System Design as planning the ultimate event—but for apps and web
 
 ---
 
-### **What is a Database Index?**
+## **What is a Database Index?**
 
 Imagine you have a giant book with a million pages. If you want to find a specific topic—say, "How to Train Your Dragon"—you wouldn't start flipping through every page, right? That'd take forever.
 
@@ -333,13 +333,13 @@ Let's say you're designing a **food delivery app**:
 
 ---
 
-### **What is a Transaction?**
+## **What is a Transaction?**
 
 In simple terms, a transaction is a sequence of one or more operations (like reading, writing, or updating data) performed as a single, logical unit of work. Transactions are all about ensuring that a database maintains its integrity, even in the face of errors or crashes.
 
 ---
 
-### **What Does ACID Stand For?**
+## **What Does ACID Stand For?**
 
 ACID is a set of properties that ensure **reliability and consistency** in database transactions:
 
@@ -507,7 +507,7 @@ Let's use a bank as an example:
 
 ---
 
-### **What is Read Committed Isolation?**
+## **What is Read Committed Isolation?**
 
 **Read Committed** is a **transaction isolation level** in databases. Its main rule is:
 
@@ -681,7 +681,7 @@ COMMIT;
 
 ---
 
-### **What is a Snapshot of Committed Data?**
+## **What is a Snapshot of Committed Data?**
 
 In databases with MVCC, a **snapshot** is a version of the data **as it exists at a specific moment in time**—typically when a query begins. This snapshot includes only **committed changes** made by other transactions. Uncommitted changes are ignored.
 
@@ -827,7 +827,7 @@ In the **Read Committed** isolation level:
 
 ---
 
-### **What is Snapshot Isolation?**
+## **What is Snapshot Isolation?**
 
 Snapshot Isolation means **every person gets their own copy of the library when they enter**.
 
@@ -957,7 +957,7 @@ Snapshot Isolation is like working in a magical library:
 
 ---
 
-### **What is Write Skew?**
+## **What is Write Skew?**
 
 Write skew happens when **two transactions read the same data, make decisions based on it, and update related but non-overlapping data**, leading to inconsistent results when their changes are combined.
 
@@ -1022,7 +1022,7 @@ Imagine:
 
 ---
 
-### **What is Phantom Writes?**
+## **What is Phantom Writes?**
 
 Phantom writes occur when a **query reads a set of rows**, and another transaction inserts or modifies rows that would have been part of the result, leading to inconsistencies.
 
@@ -1105,7 +1105,7 @@ Imagine:
 
 ---
 
-### **What is Serial Execution?**
+## **What is Serial Execution?**
 
 Imagine a queue at a **movie ticket counter**. 🎟️
 
@@ -1199,7 +1199,7 @@ That's why **isolation levels** like Serializable exist — they make concurrenc
 
 ---
 
-### **What is Two-Phase Locking (2PL)?**
+## **What is Two-Phase Locking (2PL)?**
 
 Two-Phase Locking is a method used in databases to ensure that transactions **follow the rules** and avoid conflicts like dirty reads, lost updates, or other inconsistencies.
 
@@ -1352,7 +1352,7 @@ It ensures consistency and avoids problems but can lead to deadlocks or delays.
 
 ---
 
-### **What is Serializable Snapshot Isolation?**
+## **What is Serializable Snapshot Isolation?**
 
 Imagine you're playing a **multiplayer video game** 🎮 with your friends, but instead of actually playing at the same time, the game creates a **snapshot** of everyone's position and actions when the game starts. Each player does their moves separately, but when the game ends, the results are combined as if everyone played in a perfectly organized way, one at a time.
 
@@ -1456,7 +1456,7 @@ Think of it like **parallel play in a sandbox** — everyone builds their own ca
 
 ---
 
-### **What is Column-Oriented Storage?**
+## **What is Column-Oriented Storage?**
 
 Imagine you have a spreadsheet 📊 with **rows** and **columns**.
 
@@ -1495,7 +1495,7 @@ This is perfect for **analytical queries** where you only need specific columns 
 
 ---
 
-### **Parquet: The Hero of Columnar Storage** 🦸
+## **Parquet: The Hero of Columnar Storage** 🦸
 
 **Parquet** is a file format designed for **column-oriented storage**. It's super popular in **big data ecosystems** (like Hadoop, Spark, etc.).
 
@@ -1573,7 +1573,7 @@ If you run a query like:
 
 ---
 
-### **What is Data Serialization?**
+## **What is Data Serialization?**
 
 Data serialization frameworks are tools that convert data structures into a format that can be stored or transmitted and then reconstructed later. They're essential for exchanging data between systems (e.g., microservices or distributed systems) or for saving data efficiently.
 
@@ -1754,7 +1754,7 @@ Here's what they focus on:
 
 ---
 
-### **What Are Replicas?**
+## **What Are Replicas?**
 
 Imagine you have a **library** 📚 with a collection of books.
 
@@ -1849,7 +1849,7 @@ Replicas are simply **copies** of your main database that help you:
 
 ---
 
-### **What are Stale Reads?**
+## **What are Stale Reads?**
 
 Imagine you're at a **coffee shop**, and you're checking the **menu** on the wall for the prices of drinks. But guess what? The prices on the menu are **outdated**! Maybe they haven't been updated yet, and the actual prices are higher. This is similar to what happens with **stale reads** in databases.
 
@@ -1916,7 +1916,7 @@ Let's visualize the issue and possible solutions with a simple diagram:
                    |  Primary (Master) | -- Update Stock -->     | Replica (Read)   |
                    +------------------+                          +------------------+
                            |                                          |
-         (Replica sync delay)                                            |
+                  (Replica sync delay)                                         |
                            v                                          v
                  Stale Read Happens!                                 Fresh Read!
 
