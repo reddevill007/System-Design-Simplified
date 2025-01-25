@@ -1912,8 +1912,6 @@ Let's say you have an **online store** with **inventory data** stored in your da
 Let's visualize the issue and possible solutions with a simple diagram:
 
 ```mathematica
-mathematica
-CopyEdit
                    +------------------+                          +------------------+
                    |  Primary (Master) | -- Update Stock -->     | Replica (Read)   |
                    +------------------+                          +------------------+
