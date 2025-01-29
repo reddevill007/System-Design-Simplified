@@ -1,8 +1,10 @@
 # System Design Simplified
 
-## **What is System Design?**
+### **What is System Design?**
 
-Imagine you're throwing a massive house party. You're inviting 500 people (wild, right?). Now, think about what you'll need to ensure the party runs smoothly:
+![image.png](/assets/images/image.png)
+
+Imagine you're throwing a massive house party. You’re inviting 500 people (wild, right?). Now, think about what you'll need to ensure the party runs smoothly:
 
 - Enough food and drinks.
 - A way to let people in (security).
@@ -12,13 +14,13 @@ Imagine you're throwing a massive house party. You're inviting 500 people (wild,
 
 **System Design is like planning this party.**
 
-In tech, it's about designing a system (like Facebook, Netflix, or Uber) so that it works well when thousands, millions, or even billions of people use it.
+In tech, it’s about designing a system (like Facebook, Netflix, or Uber) so that it works well when thousands, millions, or even billions of people use it.
 
 ---
 
 ### **Why do we need System Design?**
 
-Let's stick to the party example:
+Let’s stick to the party example:
 
 - If you only make snacks for 10 people, the other 490 guests will be _hangry_ (like designing for low capacity).
 - If you hire just one DJ with no backup, the vibe will die if their laptop crashes (no redundancy).
@@ -36,7 +38,9 @@ System Design solves all these problems.
 
 ### **Key Concepts in System Design**
 
-Let's break this into party terms:
+![image.png](/assets/images/image%201.png)
+
+Let’s break this into party terms:
 
 1. **Scalability**:
 
@@ -66,7 +70,7 @@ Let's break this into party terms:
 
 7. **Fault Tolerance**:
 
-   If the main power goes out, you've got a generator to keep the party going. Systems need to stay online even when parts of them fail.
+   If the main power goes out, you’ve got a generator to keep the party going. Systems need to stay online even when parts of them fail.
 
 ---
 
@@ -84,40 +88,42 @@ Imagine designing a **Pizza Delivery System**:
 
 ### **Why is System Design Fun?**
 
-It's like being a creative problem solver. You're designing something that millions of people will use without them even realizing all the magic happening behind the scenes.
+It’s like being a creative problem solver. You're designing something that millions of people will use without them even realizing all the magic happening behind the scenes.
 
 So, think of System Design as planning the ultimate event—but for apps and websites instead of parties
 
 ---
 
-## **What is a Database Index?**
+### **What is a Database Index?**
 
-Imagine you have a giant book with a million pages. If you want to find a specific topic—say, "How to Train Your Dragon"—you wouldn't start flipping through every page, right? That'd take forever.
+![image.png](/assets/images/image%202.png)
 
-Instead, you'd go to the **index at the back of the book**. The index tells you:
+Imagine you have a giant book with a million pages. If you want to find a specific topic—say, "How to Train Your Dragon"—you wouldn’t start flipping through every page, right? That’d take forever.
 
-- What topic you're looking for.
-- The exact page number where it's located.
+Instead, you’d go to the **index at the back of the book**. The index tells you:
 
-This is exactly what a **database index** does for your data. It's a shortcut that helps the database quickly find the information you're asking for, instead of flipping through every "page" (row) in the database.
+- What topic you’re looking for.
+- The exact page number where it’s located.
+
+This is exactly what a **database index** does for your data. It’s a shortcut that helps the database quickly find the information you’re asking for, instead of flipping through every "page" (row) in the database.
 
 ---
 
 ### **Why Do We Need Indexes?**
 
-Let's say you're running a **library**:
+Let’s say you’re running a **library**:
 
 - A visitor comes in and says, “I need the book _Harry Potter_.”
-- Without an index (catalog), you'd have to search _every single shelf_ to find it. That's **slow**.
-- With an index, you immediately know: "Oh, that's in Aisle 3, Shelf 7." Super fast!
+- Without an index (catalog), you’d have to search _every single shelf_ to find it. That’s **slow**.
+- With an index, you immediately know: "Oh, that’s in Aisle 3, Shelf 7." Super fast!
 
 ---
 
 ### **How Does It Work?**
 
-Let's take a **real-life database example**:
+Let’s take a **real-life database example**:
 
-- You're running an online store with a table of **products**.
+- You’re running an online store with a table of **products**.
 
   ```yaml
   Products Table:
@@ -131,7 +137,7 @@ Let's take a **real-life database example**:
 
 - Now, imagine this table has _a million products_! If someone searches for “MacBook,” the database has to go through every single row to find it.
 
-When you create an **index on the Name column**, it's like creating a shortcut. The database organizes the product names in a way that's faster to search (like sorting alphabetically and adding bookmarks).
+When you create an **index on the Name column**, it’s like creating a shortcut. The database organizes the product names in a way that’s faster to search (like sorting alphabetically and adding bookmarks).
 
 ---
 
@@ -165,13 +171,13 @@ When you create an **index on the Name column**, it's like creating a shortcut. 
 
 ### **What Happens Without Indexes?**
 
-Let's say your friend runs a pizza place, and they've got a notebook with _every single order they've ever received_. If someone calls and says,
+Let’s say your friend runs a pizza place, and they’ve got a notebook with _every single order they’ve ever received_. If someone calls and says,
 
-“Can you check my last order? My name's John.”
+“Can you check my last order? My name’s John.”
 
 Your friend flips through **every page** to find your name. It takes forever!
 
-If they had an **index (e.g., alphabetical list of customer names)**, they'd jump to "J" in seconds and find John's order.
+If they had an **index (e.g., alphabetical list of customer names)**, they’d jump to "J" in seconds and find John’s order.
 
 ---
 
@@ -185,7 +191,7 @@ Indexes are magical, but they come with some downsides:
 
 2. **Slows Down Writes**:
 
-   If you're constantly adding new orders to your pizza place notebook, you also need to update the index every time. This slows things down a bit.
+   If you’re constantly adding new orders to your pizza place notebook, you also need to update the index every time. This slows things down a bit.
 
 ---
 
@@ -197,13 +203,13 @@ A database index is like the index in a book or a catalog in a library—it help
 
 ### **How Databases Create and Use Indexes**
 
-When you create an index in a database, it's like building a **data structure** in the background to organize and store your data in a way that makes searches faster. The database uses these data structures to look things up efficiently.
+When you create an index in a database, it’s like building a **data structure** in the background to organize and store your data in a way that makes searches faster. The database uses these data structures to look things up efficiently.
 
-Here's a simple breakdown of **how an index works behind the scenes**:
+Here’s a simple breakdown of **how an index works behind the scenes**:
 
 1. **Choose a Data Structure**:
    - The database picks a data structure (e.g., B-trees, hash maps, or LSM trees) based on the use case.
-   - The data structure organizes the column(s) you're indexing.
+   - The data structure organizes the column(s) you’re indexing.
 2. **Maintain the Index**:
    - When you insert, update, or delete rows in the table, the index also gets updated to reflect the changes.
 3. **Use the Index for Queries**:
@@ -216,7 +222,9 @@ Here's a simple breakdown of **how an index works behind the scenes**:
 
 ### 1. **B-Tree Index (Most Common)**
 
-Think of a B-tree as a giant, well-organized family tree. It's the most common index type in databases like MySQL and PostgreSQL.
+![image.png](/assets/images/image%203.png)
+
+Think of a B-tree as a giant, well-organized family tree. It’s the most common index type in databases like MySQL and PostgreSQL.
 
 - **How It Works**:
   - Data is stored in a **hierarchical structure** with nodes.
@@ -234,6 +242,8 @@ Think of a B-tree as a giant, well-organized family tree. It's the most common i
 
 ### 2. **Hash Index**
 
+![image.png](/assets/images/image%204.png)
+
 A hash index is like a super-fast lookup table based on a **hashing function**.
 
 - **How It Works**:
@@ -242,19 +252,21 @@ A hash index is like a super-fast lookup table based on a **hashing function**.
 - **Advantages**:
   - Lightning-fast for equality searches (`=`), like `SELECT * FROM users WHERE id = 42`.
 - **Disadvantages**:
-  - Not good for range queries because hashing scrambles the data (e.g., `BETWEEN`, `<`, `>` won't work).
+  - Not good for range queries because hashing scrambles the data (e.g., `BETWEEN`, `<`, `>` won’t work).
 - **Use Case**:
   - Perfect for queries with exact matches, like searching by user ID or email.
 - **Real-Life Analogy**:
   - Think of it as a **locker system** at the gym:
     - You know your locker number (hash value) and go straight to it.
-    - But you can't find all lockers “greater than 100” because they're randomly arranged.
+    - But you can’t find all lockers “greater than 100” because they’re randomly arranged.
 
 ---
 
 ### 3. **LSM Tree (Log-Structured Merge Tree)**
 
-LSM trees are like efficient **grocery delivery systems** that sort and batch updates. They're commonly used in NoSQL databases like **Cassandra**, **HBase**, and **LevelDB**.
+![image.png](/assets/images/image%205.png)
+
+LSM trees are like efficient **grocery delivery systems** that sort and batch updates. They’re commonly used in NoSQL databases like **Cassandra**, **HBase**, and **LevelDB**.
 
 - **How It Works**:
   1. Writes are first stored in memory (a **memtable**).
@@ -285,6 +297,8 @@ An SSTable is a file format used by LSM trees to store sorted key-value pairs on
 
 ### 5. **Full-Text Index**
 
+![image.png](/assets/images/image%206.png)
+
 A full-text index is designed to search large amounts of text data, like in a search engine.
 
 - **How It Works**:
@@ -312,7 +326,7 @@ Databases are smart—they choose the best index based on:
 
 ### **Real-Life Example Combining Indexes**
 
-Let's say you're designing a **food delivery app**:
+Let’s say you’re designing a **food delivery app**:
 
 1. **Hash Index**: Quickly find users by their unique ID or email.
 2. **B-Tree Index**: Handle range queries, like finding restaurants within 5 km.
@@ -333,13 +347,15 @@ Let's say you're designing a **food delivery app**:
 
 ---
 
-## **What is a Transaction?**
+### **What is a Transaction?**
 
 In simple terms, a transaction is a sequence of one or more operations (like reading, writing, or updating data) performed as a single, logical unit of work. Transactions are all about ensuring that a database maintains its integrity, even in the face of errors or crashes.
 
 ---
 
-## **What Does ACID Stand For?**
+### **What Does ACID Stand For?**
+
+![image.png](/assets/images/image%207.png)
 
 ACID is a set of properties that ensure **reliability and consistency** in database transactions:
 
@@ -348,22 +364,24 @@ ACID is a set of properties that ensure **reliability and consistency** in datab
 3. **Isolation**
 4. **Durability**
 
-Let's explore each one with real-world analogies and dive into the technical implementation.
+Let’s explore each one with real-world analogies and dive into the technical implementation.
 
 ---
 
 ### **1. Atomicity ("All or Nothing")**
 
+![image.png](/assets/images/image%208.png)
+
 **Definition**: A transaction is an all-or-nothing operation. Either **all the steps** in the transaction succeed, or none of them are applied.
 
 **Real-Life Analogy**:
 
-Imagine you're withdrawing cash from an ATM. There are two steps:
+Imagine you’re withdrawing cash from an ATM. There are two steps:
 
 1. Deduct money from your bank account.
 2. Dispense the cash from the ATM.
 
-If the ATM deducts money from your account but then crashes before dispensing the cash, it'd be chaos, right?
+If the ATM deducts money from your account but then crashes before dispensing the cash, it’d be chaos, right?
 
 Atomicity ensures that both steps happen together or neither happens at all.
 
@@ -384,6 +402,8 @@ Atomicity ensures that both steps happen together or neither happens at all.
 
 ### **2. Consistency ("The Rules Are Always Followed")**
 
+![image.png](/assets/images/image%209.png)
+
 **Definition**: A transaction must ensure that the database moves from one **valid state** to another, maintaining all defined rules (like constraints, triggers, etc.).
 
 **Real-Life Analogy**:
@@ -391,7 +411,7 @@ Atomicity ensures that both steps happen together or neither happens at all.
 Think of transferring $100 between two friends. After the transfer:
 
 - Your balance decreases by $100.
-- Your friend's balance increases by $100.
+- Your friend’s balance increases by $100.
 
 The total money in the system remains the same. Consistency ensures no money is "lost" or "created" in the process.
 
@@ -399,7 +419,7 @@ The total money in the system remains the same. Consistency ensures no money is 
 
 - **Constraints and Rules**:
   - Foreign keys, primary keys, and unique constraints ensure consistency.
-  - Example: You can't transfer money to a non-existent account because of a foreign key constraint.
+  - Example: You can’t transfer money to a non-existent account because of a foreign key constraint.
 - Example in SQL:
   ```sql
   BEGIN TRANSACTION;
@@ -408,11 +428,13 @@ The total money in the system remains the same. Consistency ensures no money is 
   COMMIT;
   ```
 
-If the first insert fails, the second one can't happen because of the foreign key constraint.
+If the first insert fails, the second one can’t happen because of the foreign key constraint.
 
 ---
 
 ### **3. Isolation ("No Eavesdropping")**
+
+![image.png](/assets/images/image%2010.png)
 
 **Definition**: Transactions should not interfere with each other. Even if multiple transactions run simultaneously, the result should be as if they were executed one at a time (**serially**).
 
@@ -423,18 +445,18 @@ Imagine you and your friend are shopping online for the **last iPhone in stock**
 1. You add it to your cart and proceed to checkout.
 2. At the same time, your friend also tries to buy the same iPhone.
 
-Without isolation, the database might let both of you buy it, causing issues like double-selling. Isolation ensures one of you gets the phone, and the other is notified that it's out of stock.
+Without isolation, the database might let both of you buy it, causing issues like double-selling. Isolation ensures one of you gets the phone, and the other is notified that it’s out of stock.
 
 **How Databases Implement Isolation**:
 
 - **Locking**:
-  - Transactions lock rows or tables while they're being processed.
+  - Transactions lock rows or tables while they’re being processed.
   - Other transactions must wait or operate on a snapshot of the data.
 - **Isolation Levels**:
   - Databases provide different levels of isolation depending on the use case:
     1. **Read Uncommitted**: Transactions can see uncommitted changes (fast but risky).
     2. **Read Committed**: Transactions see only committed changes.
-    3. **Repeatable Read**: Ensures data read multiple times doesn't change during the transaction.
+    3. **Repeatable Read**: Ensures data read multiple times doesn’t change during the transaction.
     4. **Serializable**: The strictest level, ensuring full isolation.
 - Example in SQL:
   ```sql
@@ -447,6 +469,8 @@ Without isolation, the database might let both of you buy it, causing issues lik
 ---
 
 ### **4. Durability ("It Stays Saved")**
+
+![image.png](/assets/images/image%2011.png)
 
 **Definition**: Once a transaction is committed, its changes are permanent, even if the database crashes immediately afterward.
 
@@ -476,21 +500,21 @@ Without ACID, databases would be prone to:
 
 1. **Partial Updates**: Half-completed transactions causing corrupted data.
 2. **Inconsistent Data**: Breaking business rules or constraints.
-3. **Concurrency Issues**: Transactions overwriting each other's changes.
+3. **Concurrency Issues**: Transactions overwriting each other’s changes.
 4. **Data Loss**: Crashes wiping out committed transactions.
 
 ---
 
 ### **What Happens If ACID is Broken?**
 
-Let's use a bank as an example:
+Let’s use a bank as an example:
 
 1. **Atomicity Fails**:
-   - Money is deducted from your account, but never added to your friend's.
+   - Money is deducted from your account, but never added to your friend’s.
 2. **Consistency Fails**:
    - Total money in the system becomes incorrect.
 3. **Isolation Fails**:
-   - Two people withdraw money at the same time, but the balance isn't updated correctly.
+   - Two people withdraw money at the same time, but the balance isn’t updated correctly.
 4. **Durability Fails**:
    - After a crash, your account balance is reset to an earlier value.
 
@@ -502,12 +526,12 @@ Let's use a bank as an example:
 | ----------------- | ---------------------------- | ------------------------------------------------------ |
 | **Atomicity**     | All-or-nothing execution     | Withdrawing cash: Deduct and dispense or do nothing.   |
 | **Consistency**   | Always valid states          | Money transfer: Balances must always add up correctly. |
-| **Isolation**     | Transactions don't interfere | Buying the last iPhone without double-selling.         |
+| **Isolation**     | Transactions don’t interfere | Buying the last iPhone without double-selling.         |
 | **Durability**    | Changes are permanent        | Diary in a fireproof safe after writing.               |
 
 ---
 
-## **What is Read Committed Isolation?**
+### **What is Read Committed Isolation?**
 
 **Read Committed** is a **transaction isolation level** in databases. Its main rule is:
 
@@ -515,49 +539,49 @@ Let's use a bank as an example:
 
 This means:
 
-1. **No Dirty Reads**: Your transaction won't see uncommitted changes made by other transactions.
+1. **No Dirty Reads**: Your transaction won’t see uncommitted changes made by other transactions.
 2. Data can change **while you're reading it**, as long as those changes are committed by other transactions.
 
 ---
 
 ### **Real-Life Analogy: Supermarket Price Tags**
 
-Imagine you're shopping at a supermarket:
+Imagine you’re shopping at a supermarket:
 
-1. When you look at the price of an apple, it's only the **official price tag** (committed price).
-2. The store staff might be updating the prices on their tablet (uncommitted changes), but you don't see those updates until they're finalized and the new price tag is put up.
+1. When you look at the price of an apple, it’s only the **official price tag** (committed price).
+2. The store staff might be updating the prices on their tablet (uncommitted changes), but you don’t see those updates until they’re finalized and the new price tag is put up.
 3. However, if you check the price again after a few minutes, it might have changed because the staff **committed the new price**.
 
 ---
 
 ### **How Read Committed Works**
 
-Let's break it into steps using a database:
+Let’s break it into steps using a database:
 
 ### Example Scenario:
 
-- You're managing a **bank database** with two customers: Alice and Bob.
+- You’re managing a **bank database** with two customers: Alice and Bob.
 - Alice has $500, and Bob has $300.
 
 ### Transactions:
 
-- **Transaction A**: Deduct $100 from Alice's account and commit.
-- **Transaction B**: Read Alice's balance.
+- **Transaction A**: Deduct $100 from Alice’s account and commit.
+- **Transaction B**: Read Alice’s balance.
 
 ---
 
 ### **Step-by-Step Example:**
 
 1. **Transaction A (In Progress)**:
-   - Deduct $100 from Alice's account.
-   - Alice's balance becomes `$400`, but **this change isn't committed yet**.
-2. **Transaction B (Read Alice's Balance)**:
-   - Since **Read Committed** doesn't allow dirty reads, Transaction B can't see Alice's `$400` yet.
-   - Transaction B reads Alice's committed balance: `$500`.
+   - Deduct $100 from Alice’s account.
+   - Alice’s balance becomes `$400`, but **this change isn’t committed yet**.
+2. **Transaction B (Read Alice’s Balance)**:
+   - Since **Read Committed** doesn’t allow dirty reads, Transaction B can’t see Alice’s `$400` yet.
+   - Transaction B reads Alice’s committed balance: `$500`.
 3. **Transaction A (Commit)**:
-   - Changes are finalized, and Alice's balance is now `$400`.
+   - Changes are finalized, and Alice’s balance is now `$400`.
 4. **Transaction B (Read Again)**:
-   - If Transaction B reads Alice's balance now, it will see `$400`.
+   - If Transaction B reads Alice’s balance now, it will see `$400`.
 
 ---
 
@@ -565,7 +589,7 @@ Let's break it into steps using a database:
 
 1. **Prevents Dirty Reads**:
    - You can only read data that is committed, avoiding "half-baked" or uncommitted changes.
-   - Example: You'll never see Alice's `$400` until Transaction A commits.
+   - Example: You’ll never see Alice’s `$400` until Transaction A commits.
 2. **Allows Non-Repeatable Reads**:
    - If you read the same data twice in a transaction, it might **change between reads** because other transactions may commit in the meantime.
    - Example:
@@ -581,7 +605,7 @@ Let's break it into steps using a database:
 
 ### **Real-Life Example in SQL**
 
-Here's how Read Committed isolation works in SQL:
+Here’s how Read Committed isolation works in SQL:
 
 ### Setting the Isolation Level:
 
@@ -601,7 +625,7 @@ COMMIT;
 
 ### Expected Behavior:
 
-- Transaction B will **only see Alice's old balance** ($500) until Transaction A commits.
+- Transaction B will **only see Alice’s old balance** ($500) until Transaction A commits.
 - After the commit, Transaction B will see the updated balance ($400).
 
 ---
@@ -609,11 +633,11 @@ COMMIT;
 ### **Advantages of Read Committed**
 
 1. **Prevents Dirty Reads**:
-   - Ensures that transactions don't read uncommitted (and potentially invalid) data.
+   - Ensures that transactions don’t read uncommitted (and potentially invalid) data.
 2. **Better Concurrency**:
    - Other transactions can still read committed data without being completely blocked by locks.
 3. **Widely Used**:
-   - It's a **default isolation level** in many databases (like PostgreSQL and Oracle) because it provides a good balance between performance and consistency.
+   - It’s a **default isolation level** in many databases (like PostgreSQL and Oracle) because it provides a good balance between performance and consistency.
 
 ---
 
@@ -626,7 +650,7 @@ COMMIT;
 
    **Example**:
 
-   Let's say you're calculating the total account balance:
+   Let’s say you’re calculating the total account balance:
 
    ```sql
    SELECT balance FROM accounts WHERE id = 1; -- Reads $500
@@ -636,7 +660,7 @@ COMMIT;
 
    If another transaction modifies one of the accounts between your reads, the total might become incorrect.
 
-2. **Doesn't Prevent Lost Updates**:
+2. **Doesn’t Prevent Lost Updates**:
    - If two transactions update the same data, the second update might overwrite the first without noticing.
 
 ---
@@ -644,7 +668,7 @@ COMMIT;
 ### **How Databases Implement Read Committed**
 
 1. **Locks**:
-   - Shared locks are used for reading data, ensuring no one else can write to the row while it's being read.
+   - Shared locks are used for reading data, ensuring no one else can write to the row while it’s being read.
    - Exclusive locks are used for writing data, ensuring no one else can read or write until the transaction commits.
 2. **Snapshots** (In MVCC Databases):
    - In systems like PostgreSQL, a **snapshot** of committed data is taken at the start of each query.
@@ -655,7 +679,7 @@ COMMIT;
 ### **When to Use Read Committed?**
 
 1. **General Use Cases**:
-   - When you don't need perfectly stable reads but want to avoid reading uncommitted data.
+   - When you don’t need perfectly stable reads but want to avoid reading uncommitted data.
    - Example: Banking, e-commerce inventory management, etc.
 2. **High Concurrency**:
    - When you want good performance and can tolerate non-repeatable reads.
@@ -677,11 +701,13 @@ COMMIT;
 
 - **Read Committed** ensures no dirty reads by allowing transactions to read only committed data.
 - **Non-repeatable reads** can occur, meaning data might change between reads in the same transaction.
-- It's a **popular default isolation level** because it balances consistency and performance.
+- It’s a **popular default isolation level** because it balances consistency and performance.
 
 ---
 
-## **What is a Snapshot of Committed Data?**
+### **What is a Snapshot of Committed Data?**
+
+![image.png](/assets/images/image%2012.png)
 
 In databases with MVCC, a **snapshot** is a version of the data **as it exists at a specific moment in time**—typically when a query begins. This snapshot includes only **committed changes** made by other transactions. Uncommitted changes are ignored.
 
@@ -696,8 +722,8 @@ So, when a query starts:
 
 Without a snapshot, queries could read:
 
-1. **Uncommitted data**: Changes made by transactions that haven't committed yet (dirty reads).
-2. **Inconsistent data**: Data that's being updated by other transactions while your query is running.
+1. **Uncommitted data**: Changes made by transactions that haven’t committed yet (dirty reads).
+2. **Inconsistent data**: Data that’s being updated by other transactions while your query is running.
 
 By using snapshots:
 
@@ -708,7 +734,7 @@ By using snapshots:
 
 ### **How Snapshots Work in MVCC**
 
-To understand snapshots, let's look at how **MVCC** works:
+To understand snapshots, let’s look at how **MVCC** works:
 
 1. **Versioned Data**:
 
@@ -729,7 +755,7 @@ To understand snapshots, let's look at how **MVCC** works:
    During query execution:
 
    - The database ensures your query only reads rows that were committed before your snapshot timestamp.
-   - Other transactions can continue modifying the data, but their changes won't affect your query.
+   - Other transactions can continue modifying the data, but their changes won’t affect your query.
 
 ---
 
@@ -751,7 +777,7 @@ To understand snapshots, let's look at how **MVCC** works:
   | 1    | 1000    | 2025-01-20   |
   | 2    | 500     | 2025-01-21   |
   ```
-- At `10:01 AM`, **Transaction B** begins and updates the balance for `ID = 1` to `1200`. However, it hasn't committed yet.
+- At `10:01 AM`, **Transaction B** begins and updates the balance for `ID = 1` to `1200`. However, it hasn’t committed yet.
 - At `10:02 AM`, Transaction A runs a query to read the balances again.
 
 ### What Happens:
@@ -827,26 +853,28 @@ In the **Read Committed** isolation level:
 
 ---
 
-## **What is Snapshot Isolation?**
+### **What is Snapshot Isolation?**
+
+![image.png](/assets/images/image%2013.png)
 
 Snapshot Isolation means **every person gets their own copy of the library when they enter**.
 
 You can:
 
 1. Read all the books from your copy (snapshot).
-2. Write notes (update data), but you're only allowed to save those notes **if no one else saved conflicting notes on the same book while you were working.**
+2. Write notes (update data), but you’re only allowed to save those notes **if no one else saved conflicting notes on the same book while you were working.**
 
 ---
 
 ### **Real-Life Analogy: A Magical Library**
 
-Imagine there's a magical library:
+Imagine there’s a magical library:
 
 - Every time you walk in, the library gives you a copy of all the books **as they looked at that moment**. 🕒
 - This is your **snapshot**.
-- If someone else updates a book (like adding a new chapter), you won't see it unless you leave and come back.
+- If someone else updates a book (like adding a new chapter), you won’t see it unless you leave and come back.
 
-When you're done making changes, the library checks:
+When you’re done making changes, the library checks:
 
 > “Did anyone else touch the same book and save changes while you were working?”
 
@@ -854,7 +882,7 @@ If no one did, your changes are saved.
 
 If someone else already updated that book, the library says:
 
-> “Sorry, you can't save your changes. Try again.”
+> “Sorry, you can’t save your changes. Try again.”
 
 ---
 
@@ -874,7 +902,7 @@ If someone else already updated that book, the library says:
 
 ### **Example: Two Friends Borrowing Books**
 
-Let's say there's a library with a book catalog:
+Let’s say there’s a library with a book catalog:
 
 | **Book**     | **Stock** |
 | ------------ | --------- |
@@ -929,9 +957,9 @@ Let's say there's a library with a book catalog:
 ### **Key Features of Snapshot Isolation**
 
 1. **No Dirty Reads**:
-   - You never see changes from other transactions unless they're committed.
+   - You never see changes from other transactions unless they’re committed.
 2. **Repeatable Reads**:
-   - The snapshot you get at the start doesn't change, even if someone else updates data in the meantime.
+   - The snapshot you get at the start doesn’t change, even if someone else updates data in the meantime.
 3. **Write Conflict Check**:
    - If two transactions try to update the same data, only the first one to commit succeeds.
    - The second one gets an error and has to try again.
@@ -943,7 +971,7 @@ Let's say there's a library with a book catalog:
 Snapshot Isolation is great when:
 
 - You need **consistent reads** (like in reports or analytics).
-- You're okay with retrying transactions if there's a conflict.
+- You’re okay with retrying transactions if there’s a conflict.
 
 ---
 
@@ -952,12 +980,14 @@ Snapshot Isolation is great when:
 Snapshot Isolation is like working in a magical library:
 
 - You get your own copy of the books (snapshot) when you start.
-- You can read and write without worrying about other people's changes.
+- You can read and write without worrying about other people’s changes.
 - But if someone updates the same book before you save, you have to try again.
 
 ---
 
-## **What is Write Skew?**
+### **What is Write Skew?**
+
+![image.png](/assets/images/image%2014.png)
 
 Write skew happens when **two transactions read the same data, make decisions based on it, and update related but non-overlapping data**, leading to inconsistent results when their changes are combined.
 
@@ -983,7 +1013,7 @@ Imagine:
 2. **Transaction A** (Dr. A):
 
    - Dr. A checks the table and sees Dr. B is on call.
-   - Dr. A decides:“Since Dr. B is on call, I'll go off duty.”
+   - Dr. A decides:“Since Dr. B is on call, I’ll go off duty.”
 
      ```sql
 
@@ -994,7 +1024,7 @@ Imagine:
 3. **Transaction B** (Dr. B):
 
    - Dr. B checks the table and sees Dr. A is on call.
-   - Dr. B decides:“Since Dr. A is on call, I'll go off duty too.”
+   - Dr. B decides:“Since Dr. A is on call, I’ll go off duty too.”
 
      ```sql
 
@@ -1022,15 +1052,17 @@ Imagine:
 
 ---
 
-## **What is Phantom Writes?**
+### **What is Phantom Writes?**
 
 Phantom writes occur when a **query reads a set of rows**, and another transaction inserts or modifies rows that would have been part of the result, leading to inconsistencies.
+
+![image.png](/assets/images/image%2015.png)
 
 ### **Real-Life Example: Exam Invigilation**
 
 Imagine:
 
-- There's an exam with **30 students**, and a rule states:**Each classroom must have at least one invigilator for every 10 students.**
+- There’s an exam with **30 students**, and a rule states:**Each classroom must have at least one invigilator for every 10 students.**
 
 ### Scenario:
 
@@ -1046,7 +1078,7 @@ Imagine:
    ```
 
 2. **Transaction A**:
-   - Checks Classroom A and sees there's already an invigilator.
+   - Checks Classroom A and sees there’s already an invigilator.
    - Decides not to assign any more invigilators.
 3. **Transaction B**:
 
@@ -1073,7 +1105,7 @@ Imagine:
 
 ### **What Happened?**
 
-- Transaction A didn't account for the extra students added by Transaction B.
+- Transaction A didn’t account for the extra students added by Transaction B.
 - Classroom A now has 20 students but still only 1 invigilator, violating the rule!
 
 ---
@@ -1105,7 +1137,9 @@ Imagine:
 
 ---
 
-## **What is Serial Execution?**
+### **What is Serial Execution?**
+
+![image.png](/assets/images/image%2016.png)
 
 Imagine a queue at a **movie ticket counter**. 🎟️
 
@@ -1115,13 +1149,13 @@ Imagine a queue at a **movie ticket counter**. 🎟️
 In the database world, **serial execution** means:
 
 - Transactions are executed **one after the other**, in a strict sequence.
-- There's no overlap or parallel processing — a transaction has to **finish completely** before the next one can start.
+- There’s no overlap or parallel processing — a transaction has to **finish completely** before the next one can start.
 
 ---
 
 ### **How Does It Work?**
 
-Let's say you have two transactions:
+Let’s say you have two transactions:
 
 1. Transaction A: Transfer $50 from Alice to Bob.
 2. Transaction B: Transfer $30 from Bob to Charlie.
@@ -1129,9 +1163,9 @@ Let's say you have two transactions:
 With serial execution:
 
 1. **Transaction A runs first**:
-   - The database deducts $50 from Alice's account and adds it to Bob's.
+   - The database deducts $50 from Alice’s account and adds it to Bob’s.
 2. **Only after A finishes, Transaction B starts**:
-   - The database deducts $30 from Bob's account and adds it to Charlie's.
+   - The database deducts $30 from Bob’s account and adds it to Charlie’s.
 
 No transaction starts until the previous one **completes and commits**.
 
@@ -1149,7 +1183,7 @@ Serial execution is simple and avoids problems like:
 
 ### **Real-Life Analogy: Library Queue**
 
-Imagine there's a single librarian helping people. 📚
+Imagine there’s a single librarian helping people. 📚
 
 - Person A asks to borrow a book. The librarian processes their request completely.
 - Only after Person A is done, Person B steps forward.
@@ -1166,14 +1200,14 @@ Similarly, in serial execution, each transaction gets its own **exclusive time s
 ### **Advantages of Serial Execution**
 
 1. **Simplicity**: Easy to reason about, as everything happens step by step.
-2. **Consistency**: Transactions don't interfere with each other.
-3. **No Deadlocks**: Since transactions don't overlap, you avoid situations where two processes are stuck waiting for each other.
+2. **Consistency**: Transactions don’t interfere with each other.
+3. **No Deadlocks**: Since transactions don’t overlap, you avoid situations where two processes are stuck waiting for each other.
 
 ---
 
 ### **Disadvantages of Serial Execution**
 
-1. **Slower**: Since transactions run one after another, it's not the most efficient way to handle workloads.
+1. **Slower**: Since transactions run one after another, it’s not the most efficient way to handle workloads.
 2. **Low Throughput**: If you have many users, they all have to wait, which can lead to bottlenecks.
 
 ---
@@ -1187,19 +1221,21 @@ However, concurrency brings challenges like:
 - Conflicts (e.g., two people updating the same row).
 - Inconsistencies (e.g., one transaction reading uncommitted data).
 
-That's why **isolation levels** like Serializable exist — they make concurrency behave **as if** transactions were executed serially, but without actually forcing serial execution.
+That’s why **isolation levels** like Serializable exist — they make concurrency behave **as if** transactions were executed serially, but without actually forcing serial execution.
 
 ---
 
 ### **Summary**
 
 - **Serial execution**: Transactions run one after another, like people in a queue.
-- **It's simple** and avoids all conflicts, but it's **slow**.
+- **It’s simple** and avoids all conflicts, but it’s **slow**.
 - Modern databases aim to give the **illusion of serial execution** while running transactions in parallel, using techniques like locking or multiversion concurrency control (MVCC).
 
 ---
 
-## **What is Two-Phase Locking (2PL)?**
+### **What is Two-Phase Locking (2PL)?**
+
+![image.png](/assets/images/af996571-f1af-4810-9bfc-77fcf1e6de15.png)
 
 Two-Phase Locking is a method used in databases to ensure that transactions **follow the rules** and avoid conflicts like dirty reads, lost updates, or other inconsistencies.
 
@@ -1209,12 +1245,12 @@ It works by breaking the process into **two phases**:
    - The transaction grabs all the locks it needs.
    - No locks can be released during this phase.
 2. **Shrinking Phase** (Releasing Locks)
-   - Once the transaction starts releasing locks, it can't acquire new ones.
+   - Once the transaction starts releasing locks, it can’t acquire new ones.
 
 Think of it as **shopping**:
 
 1. In the **growing phase**, you pick up all the items you want from the store shelves.
-2. In the **shrinking phase**, you head to the checkout counter and start paying (you're done picking up new items).
+2. In the **shrinking phase**, you head to the checkout counter and start paying (you’re done picking up new items).
 
 ---
 
@@ -1224,14 +1260,14 @@ The goal is to ensure **serializability**, which means transactions behave as if
 
 By using locks:
 
-- Transactions don't overwrite each other's changes.
+- Transactions don’t overwrite each other’s changes.
 - Data stays consistent.
 
 ---
 
 ### **How Does It Work?**
 
-Let's say we have a database of **bank accounts**:
+Let’s say we have a database of **bank accounts**:
 
 | Account | Balance |
 | ------- | ------- |
@@ -1252,18 +1288,18 @@ If these transactions happen without locking, they might:
 
 ### With Two-Phase Locking
 
-Here's what happens step by step:
+Here’s what happens step by step:
 
 1. **Transaction A** (Growing Phase):
-   - Locks Alice's account for writing.
-   - Locks Bob's account for writing.
+   - Locks Alice’s account for writing.
+   - Locks Bob’s account for writing.
 2. **Transaction B** (Growing Phase):
-   - Tries to lock Bob's account for writing but has to wait because Transaction A holds the lock.
+   - Tries to lock Bob’s account for writing but has to wait because Transaction A holds the lock.
 3. **Transaction A** (Shrinking Phase):
-   - Updates Alice's and Bob's balances.
+   - Updates Alice’s and Bob’s balances.
    - Releases locks on both accounts.
 4. **Transaction B** (Now it can proceed):
-   - Locks Bob's account and Alice's account.
+   - Locks Bob’s account and Alice’s account.
    - Completes the transfer.
 
 This ensures **serializability** — the transactions happen one at a time, even though they were submitted concurrently.
@@ -1278,7 +1314,7 @@ This ensures **serializability** — the transactions happen one at a time, even
    - **Growing Phase**: Locks are acquired, but none are released.
    - **Shrinking Phase**: Locks are released, but no new locks are acquired.
 3. **Deadlocks May Happen**:
-   - If Transaction A waits for a lock held by Transaction B, and Transaction B waits for a lock held by Transaction A, they're stuck!
+   - If Transaction A waits for a lock held by Transaction B, and Transaction B waits for a lock held by Transaction A, they’re stuck!
    - Databases detect and resolve deadlocks by aborting one transaction.
 
 ---
@@ -1352,13 +1388,15 @@ It ensures consistency and avoids problems but can lead to deadlocks or delays.
 
 ---
 
-## **What is Serializable Snapshot Isolation?**
+### **What is Serializable Snapshot Isolation?**
 
-Imagine you're playing a **multiplayer video game** 🎮 with your friends, but instead of actually playing at the same time, the game creates a **snapshot** of everyone's position and actions when the game starts. Each player does their moves separately, but when the game ends, the results are combined as if everyone played in a perfectly organized way, one at a time.
+![image.png](/assets/images/image%2017.png)
 
-That's **Serializable Snapshot Isolation (SSI)**:
+Imagine you’re playing a **multiplayer video game** 🎮 with your friends, but instead of actually playing at the same time, the game creates a **snapshot** of everyone’s position and actions when the game starts. Each player does their moves separately, but when the game ends, the results are combined as if everyone played in a perfectly organized way, one at a time.
 
-- It's a fancy way for databases to let transactions happen **at the same time**, but it feels like they happened one after another (**serially**) when you look at the results.
+That’s **Serializable Snapshot Isolation (SSI)**:
+
+- It’s a fancy way for databases to let transactions happen **at the same time**, but it feels like they happened one after another (**serially**) when you look at the results.
 
 ---
 
@@ -1380,7 +1418,7 @@ Imagine a classroom where:
 - Every student gets the **same question paper** (the snapshot).
 - They work independently (no peeking!).
 
-Now, the teacher checks their answers **one by one** to make sure their work doesn't overlap or create conflicts:
+Now, the teacher checks their answers **one by one** to make sure their work doesn’t overlap or create conflicts:
 
 - If two students claim the same "unique prize," the teacher picks one and asks the other to reattempt (roll back).
 
@@ -1390,14 +1428,14 @@ This ensures that, even though everyone worked at the same time, the final resul
 
 ### **Example: Bank Accounts**
 
-Let's say we have two transactions:
+Let’s say we have two transactions:
 
 - **Transaction A**: Transfers $100 from Alice to Bob.
 - **Transaction B**: Transfers $50 from Alice to Charlie.
 
 Both transactions:
 
-1. Start at the same time and see **Alice's balance as $200** (snapshot).
+1. Start at the same time and see **Alice’s balance as $200** (snapshot).
 2. Work independently based on their snapshots.
 
 ### What Happens Next:
@@ -1410,7 +1448,7 @@ Both transactions:
 ### **Why Is SSI Useful?**
 
 1. **High Performance**:
-   - Transactions don't block each other for reads; they can proceed in parallel.
+   - Transactions don’t block each other for reads; they can proceed in parallel.
 2. **Consistency**:
    - Even though transactions run concurrently, the final results are as if they ran one after another.
 3. **Conflict Detection**:
@@ -1420,10 +1458,12 @@ Both transactions:
 
 ### **How Does the Database Handle Conflicts?**
 
+![image.png](/assets/images/image%2018.png)
+
 The database keeps an eye on:
 
 1. **Read-Write Conflicts**:
-   - If Transaction A reads data that Transaction B changes, and the final result doesn't make sense, one transaction gets rolled back.
+   - If Transaction A reads data that Transaction B changes, and the final result doesn’t make sense, one transaction gets rolled back.
 2. **Write-Write Conflicts**:
    - If two transactions try to update the same data, only one can succeed.
 
@@ -1435,7 +1475,7 @@ By catching conflicts early, the database prevents inconsistent results.
 
 - **Concurrency**: Multiple transactions can work at the same time.
 - **Serializable Results**: The database guarantees the same result as if transactions happened in a serial order.
-- **No Locking Needed**: Unlike other methods (like Two-Phase Locking), SSI doesn't rely on locks, reducing delays.
+- **No Locking Needed**: Unlike other methods (like Two-Phase Locking), SSI doesn’t rely on locks, reducing delays.
 
 ---
 
@@ -1452,15 +1492,17 @@ By catching conflicts early, the database prevents inconsistent results.
 - **Serializable**: The database ensures the final results look like transactions happened one at a time.
 - **Conflict Detection**: If transactions try to do things that break the rules (e.g., inconsistent results), one gets rolled back.
 
-Think of it like **parallel play in a sandbox** — everyone builds their own castles independently, but the teacher (the database) ensures no one's castles overlap or destroy each other. 🏰
+Think of it like **parallel play in a sandbox** — everyone builds their own castles independently, but the teacher (the database) ensures no one’s castles overlap or destroy each other. 🏰
 
 ---
 
-## **What is Column-Oriented Storage?**
+### **What is Column-Oriented Storage?**
+
+![image.png](/assets/images/image%2019.png)
 
 Imagine you have a spreadsheet 📊 with **rows** and **columns**.
 
-Here's a small example:
+Here’s a small example:
 
 | ID  | Name    | Age | Country |
 | --- | ------- | --- | ------- |
@@ -1469,6 +1511,8 @@ Here's a small example:
 | 3   | Charlie | 35  | UK      |
 
 ### **Row-Oriented Storage** (Traditional Databases):
+
+![image.png](/assets/images/image%2020.png)
 
 - Data is stored **row by row**.Example:`[1, Alice, 25, USA], [2, Bob, 30, Canada], [3, Charlie, 35, UK]`
 
@@ -1480,7 +1524,7 @@ This is great when you need to access or modify **entire rows** of data, like in
 
 - Data is stored **column by column**, like this:`ID: [1, 2, 3]Name: [Alice, Bob, Charlie]Age: [25, 30, 35]Country: [USA, Canada, UK]`
 
-This is perfect for **analytical queries** where you only need specific columns (e.g., "What's the average age?"). Instead of scanning all rows, it just reads the `Age` column, saving **time** and **storage**.
+This is perfect for **analytical queries** where you only need specific columns (e.g., "What’s the average age?"). Instead of scanning all rows, it just reads the `Age` column, saving **time** and **storage**.
 
 ---
 
@@ -1491,13 +1535,15 @@ This is perfect for **analytical queries** where you only need specific columns 
 2. **Better Compression**:
    - Similar data in columns (e.g., many people might share the same country) compresses better than rows with mixed data.
 3. **Efficient for Big Data**:
-   - When dealing with massive datasets (like in data warehouses), it's much faster and cost-effective.
+   - When dealing with massive datasets (like in data warehouses), it’s much faster and cost-effective.
 
 ---
 
-## **Parquet: The Hero of Columnar Storage** 🦸
+### **Parquet: The Hero of Columnar Storage** 🦸
 
-**Parquet** is a file format designed for **column-oriented storage**. It's super popular in **big data ecosystems** (like Hadoop, Spark, etc.).
+**Parquet** is a file format designed for **column-oriented storage**. It’s super popular in **big data ecosystems** (like Hadoop, Spark, etc.).
+
+![image.png](/assets/images/image%2021.png)
 
 ---
 
@@ -1561,7 +1607,7 @@ If you run a query like:
 
 ### **Real-Life Analogy** 🛒
 
-- **Row-Oriented**: Imagine shopping bags with **all items** for a customer. If you're looking for apples (age data), you have to dig through each bag.
+- **Row-Oriented**: Imagine shopping bags with **all items** for a customer. If you’re looking for apples (age data), you have to dig through each bag.
 - **Column-Oriented (Parquet)**: Imagine apples, oranges, and bananas sorted into separate bins. If you only need apples, you grab just that bin.
 
 ---
@@ -1569,15 +1615,17 @@ If you run a query like:
 ### **Summary**
 
 - **Column-Oriented Storage**: Great for analytics, reads only needed columns, saves time and space.
-- **Parquet**: A popular columnar file format that's efficient, compressed, and optimized for big data systems.
+- **Parquet**: A popular columnar file format that’s efficient, compressed, and optimized for big data systems.
 
 ---
 
-## **What is Data Serialization?**
+### **What is Data Serialization?**
 
-Data serialization frameworks are tools that convert data structures into a format that can be stored or transmitted and then reconstructed later. They're essential for exchanging data between systems (e.g., microservices or distributed systems) or for saving data efficiently.
+![image.png](/assets/images/image%2022.png)
 
-Let's break it down into something simple and fun, like sending **messages in bottles** across the sea 🌊!
+Data serialization frameworks are tools that convert data structures into a format that can be stored or transmitted and then reconstructed later. They’re essential for exchanging data between systems (e.g., microservices or distributed systems) or for saving data efficiently.
+
+Let’s break it down into something simple and fun, like sending **messages in bottles** across the sea 🌊!
 
 ---
 
@@ -1592,7 +1640,7 @@ Serialization is like putting a **message into a bottle** so you can send it acr
 
 Serialization frameworks make the process of writing and reading messages faster, smaller, and compatible across systems.
 
-Here's what they focus on:
+Here’s what they focus on:
 
 1. **Efficiency**: Make messages compact to save storage and bandwidth.
 2. **Compatibility**: Ensure different systems (with different languages) can read the message.
@@ -1653,7 +1701,7 @@ Here's what they focus on:
   ```
 
 - **Pros**: Compact, fast, cross-language.
-- **Cons**: Hard to debug (binary data isn't human-readable).
+- **Cons**: Hard to debug (binary data isn’t human-readable).
 
 ---
 
@@ -1708,11 +1756,11 @@ Here's what they focus on:
   { "name": "Alice", "age": 25, "city": "Paris" }
   ```
 - **Pros**: Small, fast, and easy to use.
-- **Cons**: Doesn't support schema definitions like Protobuf or Avro.
+- **Cons**: Doesn’t support schema definitions like Protobuf or Avro.
 
 ---
 
-### **7. Cap'n Proto**
+### **7. Cap’n Proto**
 
 - **What it is**: A super-fast, schema-based serialization format.
 - **Why use it**: Focuses on zero-copy serialization, meaning no need to encode/decode in many cases.
@@ -1739,7 +1787,7 @@ Here's what they focus on:
 3. **Big Data and Streaming**:
    - Avro is great for systems like Kafka or Hadoop.
 4. **Real-Time Systems**:
-   - Go for Cap'n Proto or FlatBuffers.
+   - Go for Cap’n Proto or FlatBuffers.
 5. **Distributed Systems with RPC**:
    - Thrift is a good choice.
 
@@ -1749,12 +1797,14 @@ Here's what they focus on:
 
 - **JSON/XML**: Writing messages on postcards — readable by humans but bulky.
 - **Protobuf/Avro**: Packing items in a tight, efficient box.
-- **Cap'n Proto/FlatBuffers**: Sending items already pre-packed in a way they can be used instantly.
-- **MessagePack**: A small, compressed package that's quick to send and unpack.
+- **Cap’n Proto/FlatBuffers**: Sending items already pre-packed in a way they can be used instantly.
+- **MessagePack**: A small, compressed package that’s quick to send and unpack.
 
 ---
 
-## **What Are Replicas?**
+### **What Are Replicas?**
+
+![image.png](/assets/images/image%2023.png)
 
 Imagine you have a **library** 📚 with a collection of books.
 
@@ -1783,7 +1833,7 @@ In a database, **replicas** are **copies** of your main (or primary) database. T
 
 ### **How Does It Work?**
 
-Let's break it down with a simple ASCII diagram! 📊
+Let’s break it down with a simple ASCII diagram! 📊
 
 ```sql
 
@@ -1836,7 +1886,7 @@ Think of the **Primary Database** as the **central kitchen** in a restaurant whe
 ### **When to Use Replicas?**
 
 1. **Scaling Read-heavy Applications**: If your app needs to serve a lot of users who mostly read data, replicas will help distribute the load.
-2. **Improved Fault Tolerance**: If the primary database goes down, replicas can ensure your application **keeps running**, though they won't handle writes without the primary.
+2. **Improved Fault Tolerance**: If the primary database goes down, replicas can ensure your application **keeps running**, though they won’t handle writes without the primary.
 
 ---
 
@@ -1849,9 +1899,9 @@ Replicas are simply **copies** of your main database that help you:
 
 ---
 
-## **What are Stale Reads?**
+### **What are Stale Reads?**
 
-Imagine you're at a **coffee shop**, and you're checking the **menu** on the wall for the prices of drinks. But guess what? The prices on the menu are **outdated**! Maybe they haven't been updated yet, and the actual prices are higher. This is similar to what happens with **stale reads** in databases.
+Imagine you're at a **coffee shop**, and you're checking the **menu** on the wall for the prices of drinks. But guess what? The prices on the menu are **outdated**! Maybe they haven’t been updated yet, and the actual prices are higher. This is similar to what happens with **stale reads** in databases.
 
 In database terms, **stale reads** refer to a situation where you **read outdated data** that has not yet been synchronized with the latest changes.
 
@@ -1865,13 +1915,13 @@ Stale reads happen most often when:
 2. The **replica** is not yet synchronized with the latest data from the **primary database**.
 3. Your system is **read-heavy**, and replicas are lagging behind.
 
-Let's look at an example to make it clearer!
+Let’s look at an example to make it clearer!
 
 ---
 
 ### **Real-Life Example: Online Store**
 
-Let's say you have an **online store** with **inventory data** stored in your database. You're using **replicas** to handle all the customer queries (reads). The main database (primary) has the actual inventory count.
+Let's say you have an **online store** with **inventory data** stored in your database. You’re using **replicas** to handle all the customer queries (reads). The main database (primary) has the actual inventory count.
 
 1. **Update**: You update the inventory count for a product (e.g., decrease stock because someone bought it).
 2. **Replication**: The primary database sends this update to all replicas, but it takes some time for them to sync.
@@ -1909,14 +1959,15 @@ Let's say you have an **online store** with **inventory data** stored in your da
 
 ### **Diagram: Dealing with Stale Reads**
 
-Let's visualize the issue and possible solutions with a simple diagram:
+Let’s visualize the issue and possible solutions with a simple diagram:
 
 ```mathematica
+
                    +------------------+                          +------------------+
                    |  Primary (Master) | -- Update Stock -->     | Replica (Read)   |
                    +------------------+                          +------------------+
                            |                                          |
-                  (Replica sync delay)                                         |
+         (Replica sync delay)                                            |
                            v                                          v
                  Stale Read Happens!                                 Fresh Read!
 
@@ -1941,3 +1992,445 @@ Let's visualize the issue and possible solutions with a simple diagram:
 - Use read repair or eventual consistency.
 
 It's all about **balancing consistency** with **performance** and **availability** based on the needs of your application.
+
+---
+
+## **Single-Leader Replication**
+
+### **What Is It?**
+
+In a **single-leader system**, there is **one leader (primary)** that handles all the **write operations**, and the **followers (replicas)** copy the data from the leader to handle **read operations**.
+
+Think of it as a **classroom** where:
+
+- The **teacher (leader)** writes on the **whiteboard**.
+- The **students (followers)** copy what the teacher writes into their notebooks.
+- If someone wants to know the latest notes, they can check with the students (followers), but they can't change the notes themselves.
+
+---
+
+### **How It Works**
+
+1. **Write Operations**:
+   - All writes go to the **leader**.
+   - The leader updates its data and then sends the changes to the **followers**.
+2. **Read Operations**:
+   - Reads can happen on **any follower** to reduce the load on the leader.
+3. **Data Flow**:
+   - The leader sends updates to all followers asynchronously or synchronously.
+
+---
+
+![image.png](/assets/images/image%2024.png)
+
+---
+
+### **Pros of Single-Leader Replication**
+
+- **Simple** and easy to implement.
+- Great for **read-heavy workloads**.
+- The leader ensures **consistency** for all writes.
+
+### **Cons**
+
+- **Single Point of Failure**: If the leader crashes, writes will stop until a new leader is elected.
+- **Replication Lag**: Followers might serve stale data due to delay in syncing with the leader.
+
+---
+
+## **Multi-Leader Replication**
+
+### **What Is It?**
+
+In a **multi-leader system**, there are **multiple leaders** that can accept **write operations**, and they sync their data with each other. This is like having **multiple teachers** in a classroom who can all write on the whiteboard, and they share their notes to stay in sync.
+
+---
+
+### **How It Works**
+
+1. **Write Operations**:
+   - Writes can happen on **any leader**, and the changes are propagated to other leaders.
+   - Leaders then synchronize with **followers**.
+2. **Data Flow**:
+   - Leaders exchange updates between themselves and then propagate the changes to their followers.
+
+---
+
+![image.png](/assets/images/image%2025.png)
+
+---
+
+### **Pros of Multi-Leader Replication**
+
+- **High Availability**: If one leader goes down, others can still handle writes.
+- **Geographical Distribution**: Leaders can be deployed closer to users in different regions for faster writes.
+
+### **Cons**
+
+- **Conflict Resolution**: If two leaders accept conflicting writes (e.g., updating the same row differently), the system needs a way to resolve the conflict.
+- **Complexity**: Maintaining consistency between multiple leaders is more complex.
+
+---
+
+### **When to Use What?**
+
+| Feature             | Single-Leader                   | Multi-Leader                       |
+| ------------------- | ------------------------------- | ---------------------------------- |
+| **Use Case**        | Read-heavy workloads            | Write-heavy, multi-region apps     |
+| **Consistency**     | Stronger                        | Weaker (needs conflict resolution) |
+| **Complexity**      | Simpler                         | More complex                       |
+| **Fault Tolerance** | Lower (single point of failure) | Higher                             |
+
+---
+
+### **Real-Life Examples**
+
+1. **Single-Leader**: Think of a bank where all transactions (writes) go to a central server, but account balance checks (reads) can happen on replicas.
+2. **Multi-Leader**: Think of collaborative tools like Google Docs, where multiple users can make changes (writes) from different locations, and the system resolves conflicts later.
+
+---
+
+## **Snapshot Replication:**
+
+- Creating a copy of the whole database at a certain moment in time and then replicating that snapshot to one or more destination servers is known as snapshot replication.
+
+---
+
+## **Transactional Replication:**
+
+- One way to maintain several copies of a database synchronized in real-time is through transactional replication.
+- This means any modifications made to a particular table (or group of tables) in one database—referred to as the publisher—are instantly copied to other databases—referred to as subscribers.
+
+---
+
+## **Merge Replication:**
+
+- Merge replication is a database synchronization method allowing both the central server (publisher) and its connected devices (subscribers) to make changes to the data, resolving conflicts when necessary.
+
+---
+
+## **Write Conflicts in Single-Leader Replication**
+
+![image.png](/assets/images/image%2026.png)
+
+In **Single-Leader Replication**, there is **only one leader**, so write conflicts are rare because:
+
+1. All **writes go through the leader**.
+2. The leader determines the **order** of writes.
+
+However, conflicts can occur if:
+
+- A follower becomes the new leader during a failure, and updates are out of sync.
+
+### **How to Handle Write Conflicts in Single-Leader Systems**
+
+1. **Leader-Enforced Ordering**:
+   - The leader assigns a **global order** to all writes.
+   - Followers simply replicate changes in the same order.
+   - **Result**: No conflict because the leader resolves all.
+2. **Re-Election Syncing**:
+   - If the leader fails, a **new leader** is elected.
+   - The new leader reconciles uncommitted updates with the followers.
+   - **Example**: In PostgreSQL, a follower ensures all logs are replayed before taking over as the leader.
+
+---
+
+> Key Takeaway: Single-leader systems avoid most write conflicts by enforcing a single source of truth (the leader).
+
+---
+
+## **Write Conflicts in Multi-Leader Replication**
+
+![image.png](/assets/images/735569f0-8e00-4b0a-9a17-b3251c3034d9.png)
+
+In **Multi-Leader Replication**, conflicts are **common** because:
+
+1. Multiple leaders accept **writes independently**.
+2. These writes may update the **same data** before leaders sync with each other.
+
+### **Example: Online Store with Multi-Leaders**
+
+- You have two **leaders** (Leader A and Leader B) for different regions.
+- Both regions update the **same product stock** simultaneously.
+  - Leader A: Stock - 5
+  - Leader B: Stock - 6
+- When leaders sync, they must resolve this **conflict**.
+
+---
+
+### **How to Handle Write Conflicts in Multi-Leader Systems**
+
+1. **Last Write Wins (LWW)**:
+   - The write with the **latest timestamp** is accepted.
+   - **Issue**: Risk of losing earlier valid data (e.g., overwriting changes).
+2. **Conflict-Free Replicated Data Types (CRDTs)**:
+   - Use **data structures** that resolve conflicts automatically (e.g., merging counts or sets).
+   - **Example**: For a counter, instead of overwriting, add the increments from both leaders.
+3. **Custom Conflict Resolution**:
+   - Application developers define custom rules for resolving conflicts.
+   - **Example**: In a shopping app, prioritize stock updates based on region (e.g., Region A takes precedence).
+4. **Synchronous Writes Across Leaders**:
+   - Leaders **coordinate writes** before committing.
+   - **Cons**: Slower because it requires consensus between leaders.
+5. **Quorum Consensus**:
+   - A majority of replicas (quorum) must agree before a write is committed.
+   - Helps reduce inconsistency but can add latency.
+
+---
+
+### **Strategies to Avoid Conflicts in Multi-Leader Systems**
+
+1. **Data Partitioning**:
+   - Divide data so that **different leaders** handle **different subsets** of data.
+   - **Example**: Leader A handles **users in Europe**, Leader B handles **users in Asia**.
+2. **Read-Your-Own-Writes**:
+   - Ensure that a user always reads their own writes by routing their reads and writes to the **same leader**.
+3. **Avoid Multi-Leader if Possible**:
+   - If conflicts are too costly, consider using **Single-Leader Replication**.
+
+---
+
+### **Summary Table: Write Conflict Handling**
+
+| Strategy                  | When to Use                               | Pros                           | Cons                           |
+| ------------------------- | ----------------------------------------- | ------------------------------ | ------------------------------ |
+| **Last Write Wins (LWW)** | Simple updates with no critical conflicts | Fast, easy to implement        | Risk of overwriting valid data |
+| **CRDTs**                 | Mergeable data types like counters/sets   | Automatic conflict resolution  | Complex implementation         |
+| **Custom Rules**          | Application-specific conflict handling    | Tailored resolution            | Needs manual effort            |
+| **Synchronous Writes**    | High consistency requirements             | Resolves conflicts upfront     | Slower due to coordination     |
+| **Quorum Consensus**      | Distributed systems with strong writes    | Balances consistency and speed | Adds latency                   |
+
+---
+
+### **Key Takeaway**
+
+- **Single-Leader Systems**: Avoid most conflicts because only one leader processes writes.
+- **Multi-Leader Systems**: Conflicts are inevitable and require careful resolution strategies like LWW, CRDTs, or application-specific rules.
+
+## **Leaderless Replication**
+
+### **What is Leaderless Replication?**
+
+In **leaderless replication**, there is **no single leader** handling writes. Instead:
+
+- Any replica (node) can accept **both reads and writes**.
+- Data is replicated across multiple nodes.
+- Conflict resolution happens at **read time or write time**.
+
+Think of it like a **group of friends managing a shared grocery list**. Instead of one leader keeping the list, everyone writes their own updates, and when someone needs the list, they merge all versions together.
+
+---
+
+### **How Leaderless Replication Works**
+
+1. **A client sends a write request to multiple replicas.**
+2. **A client sends a read request and gathers responses from multiple replicas.**
+3. **If conflicts exist, a reconciliation strategy is applied** (e.g., last-write-wins, quorum-based merging).
+
+---
+
+### **Diagram: Leaderless Replication Workflow**
+
+![image.png](/assets/images/image%2027.png)
+
+- The client directly interacts with multiple nodes.
+- Any node can handle reads/writes.
+- Replicas **sync later** using mechanisms like **gossip protocols**.
+
+---
+
+### **Advantages of Leaderless Replication**
+
+✅ **High Availability** – No single point of failure.
+
+✅ **Write Flexibility** – Any node can accept writes.
+
+✅ **Resilient to Network Partitions** – Even if some nodes are down, the system can continue to work.
+
+✅ **Good for Large Distributed Systems** – Used in NoSQL databases like **DynamoDB, Cassandra, and Riak**.
+
+---
+
+### **Challenges of Leaderless Replication**
+
+⚠ **Conflict Resolution Needed** – Different nodes may store different versions of the same data.
+
+⚠ **Inconsistency Possible** – Nodes may have outdated data if they haven’t synchronized.
+
+⚠ **Read Repair is Required** – Some strategies, like quorum-based reads, help fix outdated data.
+
+---
+
+## **Techniques for Handling Stale Data & Conflicts**
+
+1. **Quorum Reads/Writes (N, R, W)**
+
+   - The system defines:
+     - **N** = Total replicas storing data.
+     - **R** = Number of replicas required for a successful **read**.
+     - **W** = Number of replicas required for a successful **write**.
+   - **Rule:** If `R + W > N`, strong consistency is maintained.
+
+   **Example:**
+
+   If `N=3`, `W=2`, `R=2`, then:
+
+   - At least **2 nodes must acknowledge a write** before it's considered successful.
+   - A **read from 2 nodes** ensures getting the latest data.
+
+   **Diagram: Quorum Reads/Writes**
+
+   ```css
+   Write to W=2 Nodes →  [ Node 1 ✅ ]  [ Node 2 ✅ ]  [ Node 3 ❌ ]
+   Read from R=2 Nodes  →  [ Node 1 ✅ ]  [ Node 3 ✅ ]
+
+   ```
+
+2. **Vector Clocks (Tracking Changes)**
+   - Each write is **timestamped** to track causality.
+   - If conflicting writes exist, the client must resolve them.
+3. **Read Repair**
+   - When a client detects **outdated data**, it updates nodes in the background.
+4. **Gossip Protocols**
+   - Nodes periodically sync with random peers to **spread updates**.
+
+---
+
+### **Real-World Use Cases**
+
+🚀 **Amazon DynamoDB** – Uses leaderless replication for high availability.
+
+📡 **Apache Cassandra** – Allows decentralized writes, using quorum-based consistency.
+
+📨 **Riak Database** – Uses vector clocks to handle conflicting writes.
+
+---
+
+### **When to Use Leaderless Replication?**
+
+✔ **Best for read-heavy and availability-critical systems.**
+
+✔ **Ideal for globally distributed databases (multi-region systems).**
+
+✔ **Great when eventual consistency is acceptable.**
+
+❌ **Not ideal for banking or critical transactions needing strong consistency.**
+
+---
+
+### **Comparison: Leader vs. Leaderless Replication**
+
+| Feature             | **Leader-Based Replication**                | **Leaderless Replication**  |
+| ------------------- | ------------------------------------------- | --------------------------- |
+| **Writes**          | Only on the leader                          | Any node can accept writes  |
+| **Reads**           | From leader or followers                    | From any node               |
+| **Consistency**     | Strong (but possible lag)                   | Eventual consistency        |
+| **Fault Tolerance** | Lower (leader is a single point of failure) | High (no leader dependency) |
+| **Use Case**        | Banking, transactions                       | Distributed NoSQL databases |
+
+---
+
+### **Key Takeaways**
+
+- **Leaderless replication removes the single point of failure.**
+- **Conflict resolution happens at read/write time using quorum or vector clocks.**
+- **Great for high-availability systems but requires careful consistency handling.**
+
+---
+
+## **Quorum and Apache Cassandra**
+
+**What is Quorum in Distributed Databases?**
+
+![image.png](/assets/images/image%2028.png)
+
+In distributed databases like **Apache Cassandra**, **quorum** is a way to ensure **consistent reads and writes** by requiring a majority of replicas to agree before confirming an operation.
+
+🔹 **Why use quorum?**
+
+- Prevents stale reads by ensuring a majority of replicas have the latest data.
+- Balances **availability** and **consistency** in an eventually consistent system.
+- Avoids conflicts by requiring a minimum number of replicas to acknowledge an operation.
+
+---
+
+## **How Quorum Works**
+
+Cassandra uses a **replication factor (N)** to determine how many copies of data exist across nodes.
+
+### **Quorum Write Example**
+
+1. A client writes **X = 100**.
+2. The write is sent to **3 nodes**.
+3. **2 out of 3 nodes must acknowledge** the write before it is confirmed.
+
+![image.png](/assets/images/f131d9e6-2380-405e-8227-366c0fe9a34e.png)
+
+Since **2 out of 3** nodes confirmed, the write is successful.
+
+---
+
+### **Quorum Read Example**
+
+1. A client requests **X**.
+2. The system reads from **at least 3 nodes**.
+3. If there's a difference, the latest version is returned.
+
+![image.png](/assets/images/1bb5fc43-70de-48f3-abfb-ae691fb5b1cd.png)
+
+This ensures we don't return stale data.
+
+---
+
+## **What is Apache Cassandra?**
+
+🔹 **Cassandra** is a **leaderless, distributed NoSQL database** designed for **high availability** and **fault tolerance**.
+
+🔹 Uses **peer-to-peer replication** with **quorum** to balance consistency and availability.
+
+🔹 Used by **Facebook, Netflix, Uber, Twitter** for massive-scale data storage.
+
+---
+
+## **Cassandra’s Quorum in Action**
+
+![image.png](/assets/images/image%2029.png)
+
+### **Key Cassandra Concepts**
+
+- **Replication Factor (N)** → Number of copies of data.
+- **Consistency Level (CL)** → Defines how many replicas must acknowledge a read/write.
+- **Tunability** → Cassandra lets you **adjust** consistency from `ONE` (fast but less consistent) to `ALL` (strong consistency but slower).
+
+### **Trade-offs in Cassandra**
+
+| Consistency Level | Availability | Consistency | Performance |
+| ----------------- | ------------ | ----------- | ----------- |
+| **ONE**           | ✅ High      | ❌ Weak     | ✅ Fast     |
+| **QUORUM**        | 🟢 Medium    | 🟢 Strong   | 🟢 Balanced |
+| **ALL**           | ❌ Low       | ✅ Strong   | ❌ Slow     |
+
+**Use Case Example:**
+
+- **Banking System:** Needs `QUORUM` or `ALL` for transaction consistency.
+- **Social Media Feeds:** Uses `ONE` for high availability and performance.
+
+---
+
+### **Why Cassandra Uses Quorum?**
+
+🔹 Ensures **eventual consistency** while keeping availability high.
+
+🔹 Prevents **stale reads** by requiring a majority confirmation.
+
+🔹 Works well in **multi-region databases** where **some nodes might be down**.
+
+---
+
+### **Summary**
+
+✅ **Quorum ensures a majority of replicas agree on a read/write.**
+
+✅ **Cassandra uses quorum for balancing consistency and availability.**
+
+✅ **Higher quorum = stronger consistency but slower performance.**
